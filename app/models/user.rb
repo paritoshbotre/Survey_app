@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
 
   validates_presence_of :gender
   #validates gender, presence: :true
-  validates :gender, inclusion: { in: ["M","F"], message: "%{value} is not valid gender"}
+  validates :gender, inclusion: { in: %w(M F), message: "%{value} is not valid gender"}
   validates :age, length: { in: 14..20}
 end
