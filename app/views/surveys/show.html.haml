@@ -1,0 +1,14 @@
+%h3
+  = @survey.name
+  %h4
+    Survey Type:
+    = @survey.survey_type
+  %h4
+    Survey Conducted Date:
+    = @survey.conducted_on
+  %h4
+    Survey Count people:
+    = @survey.count_people
+
+= link_to "Home", root_path
+= link_to "Edit", edit_survey_path(@survey)

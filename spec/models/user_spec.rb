@@ -30,7 +30,7 @@ RSpec.describe User do
   #end
 =end
   before(:each) do
-    @user = FactoryGirl.create(:user, :name => "Rails")
+    @user = FactoryGirl.create(:user)
   end
 
   it 'must have have' do

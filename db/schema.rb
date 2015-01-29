@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127062641) do
+ActiveRecord::Schema.define(version: 20150128104054) do
+
+  create_table "husbands", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "options", force: :cascade do |t|
     t.string   "description"
@@ -69,5 +75,12 @@ ActiveRecord::Schema.define(version: 20150127062641) do
   end
 
   add_index "users", ["role_id"], name: "index_users_on_role_id"
+
+  create_table "wives", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "husband_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
