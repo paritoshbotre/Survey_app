@@ -1,6 +1,6 @@
 = form_for @survey do |f|
   - if @survey.errors.any?
-    = pluralize(@survey.errors.count, "error") 
+    = pluralize(@survey.errors.count, "error")
     prohibited this survey from being saved:
     = flash[:notice]
     %ul
@@ -10,7 +10,8 @@
   = f.text_field :name
   %br
   = f.label :survey_type
-  = f.select :survey_type, Survey.all.map(&:survey_type)
+  =# f.select :survey_type, Survey.all.map(&:survey_type)
+  = f.text_field :survey_type
   %br
   = f.label :conducted_on
   = f.date_field :conducted_on
@@ -20,4 +21,3 @@
   %br
   %br
   = f.submit
-

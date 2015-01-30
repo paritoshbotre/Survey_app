@@ -5,6 +5,9 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
+    #4.times do
+    #  @survey.questions.build
+    #end
   end
 
   def create
@@ -19,12 +22,11 @@ class SurveysController < ApplicationController
 
   def show
     @survey = Survey.find(params[:id])
+    @question = @survey.questions.build
   end
 
   def edit
     @survey = Survey.find(params[:id])
-    puts "***************************"
-    p @survey
   end
 
   def update

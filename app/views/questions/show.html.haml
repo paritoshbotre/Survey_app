@@ -1,0 +1,14 @@
+%h2
+  Question:
+  = @question.description
+  %br
+
+
+  Options:
+  %br
+  %table{:border => "1"}
+    %tr
+    - @option.each do |op|
+      %td= op.description
+
+= link_to "Back Question", survey_path(@survey)

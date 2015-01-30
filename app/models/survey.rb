@@ -4,7 +4,7 @@ class Survey < ActiveRecord::Base
   has_many :questions, dependent: :destroy
   validates :name, presence: true
   before_save :check_name_of_survey, unless: :name_nil?
-
+  accepts_nested_attributes_for :questions
   def name_nil?
     puts "In name_nil"
     self.name.empty?
