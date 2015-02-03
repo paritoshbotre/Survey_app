@@ -2,10 +2,18 @@ Rails.application.routes.draw do
 
   resources :surveys do
     resources :questions
+    member do
+      get 'short'
+    end
   end
   resources :options
-  root 'surveys#index'
-  get '/login' => 'sessions#new', as: 'login'
+  #root 'surveys#index'
+  root 'sessions#new'
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  get 'signup' => 'users#new', as: 'signup'
+  get '/login' => 'sessions#new', as: 'login' 
+  delete '/logout' => 'sessions#destroy', as: 'logout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

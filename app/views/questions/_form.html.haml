@@ -1,4 +1,12 @@
 = form_for [@survey, @question] do |f|
+  - if @question.errors.any?
+    = pluralize(@question.errors.count, "error")
+    prohibited this survey from being saved:
+    %ul
+      - @question.errors.full_messages.each do |msg|
+        .error
+          = msg
+          %br
   = f.label :description
   = f.text_area :description
   %br

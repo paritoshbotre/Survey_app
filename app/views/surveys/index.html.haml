@@ -1,27 +1,6 @@
-- if flash[:notice]
-  = flash[:notice]
-%h3
-  Listing Surveys
-  %h3
-    %table{:border => "1",:styles => "font-family: sans-serif"}
-      %tr
-        %th
-          Name
-        %th
-          Type
-        %th{:colspan => "3"}
-          Actions
-      - @surveys.each do |survey|
-        %tr
-          %td
-            = survey.name
-          %td
-            = survey.survey_type
-          %td
-            = link_to "Show", survey_path(survey)
-          %td
-            = link_to "Edit", edit_survey_path(survey)
-          %td
-            = link_to "Delete", survey_path(survey), method: :delete, data: { confirm: "Are u sure ???"}
+%h2 ALL SURVEY
 
-= link_to "New Survey", new_survey_path
+%survey
+.h3 
+  -@surveys.each do |survey|
+    %h3= link_to survey.name, survey_path(survey)

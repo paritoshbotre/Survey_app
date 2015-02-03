@@ -1,11 +1,13 @@
-%h3 Questions
-%p
+%h2 Questions
+%h3
   - @question.each do |q|
-    = link_to q.description, survey_question_path(@survey, q)
-    = link_to "Edit Question", edit_survey_question_path(@survey,q)
-    = link_to "Delete Question", survey_question_path(@survey, q), method: :delete
-    %br
-
-= link_to "Create Questions", new_survey_question_path(@survey)
+    .questions
+      = link_to q.description, survey_question_path(@survey, q)
+      %br
+      =# link_to "Edit Question", edit_survey_question_path(@survey,q)
+      =# link_to "Delete Question", survey_question_path(@survey, q), method: :delete
+      %br
+%hr
+= link_to "Create Questions", new_survey_question_path(@survey), { class: "button", style: "text-decoration:none" }
 %br
-= link_to "Back to Survey", survey_path(@survey)
+= link_to "Back to Survey", survey_path(@survey), { class: "button", style: "text-decoration:none" }

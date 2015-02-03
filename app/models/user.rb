@@ -4,9 +4,10 @@ class User < ActiveRecord::Base
   has_many :options, through: :responses
 
   validates :email, uniqueness: true
-  validates :gender, inclusion: { in: %w(M F), message: "%{value} is not valid gender"}
-  validates :age, length: { is: 2 }
-  validates :password, length: { minimum: 6}
+  validates_format_of :email, :with => /\A[a-z0-9A-z]+(\.[a-z0-9]+)*@[a-z0-9]+(\.[a-z0-9]+)*\z/, :on => :create
+  #validates :gender, inclusion: { in: %w(M F), message: "%{value} is not valid gender"}
+  #validates :age, length: { is: 2 }
+  validates :password, length: { minimum: 5 }
   has_secure_password
 
 

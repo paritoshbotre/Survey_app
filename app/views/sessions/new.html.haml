@@ -1,1 +1,18 @@
 %h1 Login Form
+
+= form_tag sessions_path do
+  = label_tag :email
+  %br
+  = text_field_tag :email
+  %br
+  %br
+  = label_tag :password
+  %br
+  = password_field_tag :password
+  %br
+  %br
+  = submit_tag "Log In", class: "submit_records"
+%br
+%h3
+  Become member,
+  = link_to "register", signup_path, { class: "register_button", style: "text-decoration:none"}

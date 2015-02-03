@@ -1,0 +1,206 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+	width: 850px;
+	margin: 0px auto;
+	margin-top: 80px;
+	font-family: verdana;
+}
+
+.nav {
+	width: 65%;
+	height: 50px;
+	box-shadow: 0px 1px 50px #5E5E5E;
+	position: fixed;
+	top: 0px;
+}
+
+.navigation {
+	list-style-type: none;
+}
+li {
+	display: inline;
+	padding: 10px;
+	text-decoration: none;
+}
+li a {
+	text-decoration: none;
+	padding-right: 20px;
+	float: right;
+}
+li a:hover{
+	text-decoration: none;
+}
+
+.container {
+}
+
+.body-wrapper {
+	border-style: outset;
+	padding-left: 200px; 
+}
+
+input[type=text] {
+	padding:5px; border:2px solid #ccc; 
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+input[type=password] {
+	padding:5px; border:2px solid #ccc; 
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+input[type=submit] {
+	padding:5px 15px; 
+	/*background:#ccc; */ 
+	border:0 none;
+	cursor:pointer;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.styled-button {
+	-webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	-moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	color:#333;
+	background-color:#FA2;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border:none;
+	font-family:'Helvetica Neue',Arial,sans-serif;
+	font-size:16px;
+	font-weight:700;
+	height:18px;
+	padding:4px 16px;
+	text-shadow:#FE6 0 1px 0;
+	width: 100px;
+}
+
+.survey h3 a {
+	text-decoration: none;
+}
+.notice .error{
+	border: 1px solid;
+	margin: 10px 0px;
+	padding:15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;    
+}
+.notice {
+	/*color: #4F8A10;
+	background-color: #DFF2BF; */
+	color: #4F8A10;
+    background-color: #DFF2BF;
+}
+
+.error {
+	/*color: #D8000C;
+	background-color: #FFBABA;
+	/* background-image: url('error.png'); */ 
+	color: #D8000C;
+    background-color: #FFBABA;
+}
+.button {
+	display: block;
+	width: 115px;
+	height: 25px;
+	background: #4E9CAF;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold; 
+}
+
+.button a { 
+ 	text-decoration: none;
+}
+
+.register_button{
+	background:#5CCD00;
+	background:-moz-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#5CCD00),color-stop(100%,#4AA400));
+	background:-webkit-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+	background:-o-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+	background:-ms-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+	background:linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#5CCD00', endColorstr='#4AA400',GradientType=0);
+	padding:10px 15px;
+	color:#fff;
+	font-family:'Helvetica Neue',sans-serif;
+	font-size:16px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border:1px solid #459A00;
+}
+
+.submit_records {
+	background: #25A6E1;
+	background: -moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#188BC0));
+	background: -webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);
+	padding:8px 13px;
+	color:#fff;
+	font-family:'Helvetica Neue',sans-serif;
+	font-size:17px;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border:1px solid #1A87B9;
+}
+
+.delete_record {
+	background: #FF5DB1;
+	background: -moz-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FF5DB1),color-stop(100%,#E94A86));
+	background: -webkit-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+	background: -o-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+	background: -ms-linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+	background: linear-gradient(top,#FF5DB1 0%,#E94A86 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#FF5DB1', endColorstr='#E94A86',GradientType=0);
+	padding:5px 7px;
+	color:#fff;
+	font-family:'Helvetica Neue',sans-serif;
+	font-size:12px;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border:1px solid #E8124F;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

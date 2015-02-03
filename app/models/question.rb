@@ -12,4 +12,6 @@ class Question < ActiveRecord::Base
      #self.survey.update_attribute(questions_count: question_count)
   end
   accepts_nested_attributes_for :options
+
+  validates_associated :options
 end

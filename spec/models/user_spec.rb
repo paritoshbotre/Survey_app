@@ -29,12 +29,20 @@ RSpec.describe User do
     #User.reflect_on_association(:responses)
   #end
 =end
-  before(:each) do
-    @user = FactoryGirl.create(:user)
+  #before(:each) do
+  #  @user = FactoryGirl.build(:user)
+  #end
+  it "incorrect age" do
+    user = FactoryGirl.create(:user)
   end
 
-  it 'must have have' do
-    p @user
-    #p User.count
+  it "authenticate with email and password" do
+    user = FactoryGirl.create(:user)
+    expect(user.authenticate("foobar")).to be ==  (user)
+  end
+
+  it "not authenticate with incorrect email and password" do
+     user = FactoryGirl.create(:user, :password => "secrect", :password_confirmation => "secrect")
+     expect(user.authenticate("incorrect")).to be false
   end
 end

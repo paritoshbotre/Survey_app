@@ -1,18 +1,20 @@
-%h3
-  = @survey.name
-  %h4
-    Survey Type:
-    = @survey.survey_type
-  %h4
-    Survey Conducted Date:
-    = @survey.conducted_on
-  %h4
-    Survey Count people:
-    = @survey.count_people
-  %hr
+%h3= @survey.name
+%h4
+  Type:
+  = @survey.survey_type
+%h4
+  Conducted Date:
+  = @survey.conducted_on
+%h4
+  Count people:
+  = @survey.count_people
+%hr
+
 %h3
   All Question of Survey
-  = link_to pluralize(@survey.questions.size, "Question"), survey_questions_path(@survey)
+  = link_to pluralize(@survey.questions.count, "Question"), survey_questions_path(@survey)
 %hr
-= link_to "Home", surveys_path
-= link_to "Edit", edit_survey_path(@survey)
+=# link_to "Home", surveys_path
+= link_to image_tag("edit.jpg", :height => 70), edit_survey_path(@survey), class: "update_record"
+=# link_to "Delete", survey_path(@survey), method: :delete, class: "delete_record"
+= link_to image_tag("delete.jpg", :height => 70), survey_path(@survey), method: :delete

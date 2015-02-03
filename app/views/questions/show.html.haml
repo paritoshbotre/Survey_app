@@ -4,11 +4,13 @@
   %br
 
 
+%h2
   Options:
   %br
-  %table{:border => "1"}
-    %tr
-    - @option.each do |op|
-      %td= op.description
-
-= link_to "Back Question", survey_path(@survey)
+  %h3
+  - @option.each do |op|
+    %td= op.description
+    %br
+%br
+= link_to "Back Question", survey_questions_path(@survey)
+= link_to "Edit Question", edit_survey_question_path(@survey,@question)

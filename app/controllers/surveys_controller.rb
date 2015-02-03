@@ -1,13 +1,12 @@
 class SurveysController < ApplicationController
+  #before_action :user_is_logged_in?, only: [:create, :update, :destroy, :new]
+  before_action :check_previledges?, except: [:index, :show]
   def index
     @surveys = Survey.all
   end
 
   def new
     @survey = Survey.new
-    #4.times do
-    #  @survey.questions.build
-    #end
   end
 
   def create

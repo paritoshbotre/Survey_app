@@ -1,26 +1,24 @@
 class QuestionsController < ApplicationController
+  before_action :find_survey 
+  before_action :check_previledges?
+
   def index
-    @survey = Survey.find(params[:survey_id])
     @question = @survey.questions
   end
 
   def show
-    @survey = Survey.find(params[:survey_id])
     @question = @survey.questions.find(params[:id])
     @option = @question.options
   end
 
   def new
-    @survey = Survey.find(params[:survey_id])
     @question = @survey.questions.build
     4.times do
       @option = @question.options.build
-      p @option
     end
   end
 
   def create
-    @survey = Survey.find(params[:survey_id])
     @question = @survey.questions.build(question_params)
     p @question
     if @question.save
@@ -33,12 +31,10 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @survey = Survey.find(params[:survey_id])
     @question = @survey.questions.find(params[:id])
   end
 
   def update
-    @survey = Survey.find(params[:survey_id])
     @question = @survey.questions.find(params[:id])
     if @question.update_attributes(question_params)
       redirect_to survey_path(@survey)
@@ -48,7 +44,6 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @survey = Survey.find(params[:survey_id])
     @question = @survey.questions.find(params[:id])
     @question.destroy
     redirect_to survey_path(@survey)
@@ -57,5 +52,9 @@ class QuestionsController < ApplicationController
   private
   def question_params
     params.require(:question).permit(:description, :options_attributes =>[:id, :description])
+  end
+
+  def find_survey
+    @survey = Survey.find(params[:survey_id])
   end
 end

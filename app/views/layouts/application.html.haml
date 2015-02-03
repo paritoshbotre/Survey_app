@@ -1,0 +1,24 @@
+!!! 5
+%html
+%head
+  %title Survey Application
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+%body
+  .wrapper
+    .nav
+      %ul.navigation
+        %li= link_to "Home", surveys_path
+        - if user_is_logged_in?
+          %li= link_to "New Survey", new_survey_path
+          %li= link_to "Logout", logout_path, method: :delete
+        - else
+          %li= link_to "Sign up", signup_path
+          %li= link_to "Sign In", login_path
+    .container      
+      .body-wrapper
+      - flash.each do |name, msg|
+        = content_tag :div, msg, class: name
+      = yield
+
